@@ -1,0 +1,135 @@
+﻿<Window x:Class="TKA.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:TKA.View"
+        Background="Black"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        Title="MainWindow">
+    <Window.Resources>
+        <view:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <view:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter" />
+
+        <ItemsPanelTemplate x:Key="itemsPanel">
+            <WrapPanel Orientation="Vertical"  Height="500"/>
+        </ItemsPanelTemplate>
+
+        <Style x:Key="ToggleButtonStyle"
+               TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background"
+                    Value="#666666" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontFamily"
+                    Value="Microsoft YaHei" />
+            <Setter Property="FontSize"
+                    Value="12" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked"
+                                     Value="true">
+                                <Setter Property="Background"
+                                        Value="#FF5D5D" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Viewbox StretchDirection="DownOnly">
+        <Grid Height="768"
+              Width="1024">
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://application:,,,/Style/Image/background.png" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="240" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <view:TitleControl Grid.Row="0" DataContext="{Binding WarningVM}" />
+            <view:VideoGroupControl Grid.Row="1"
+                                    x:Name="videogroup"
+                                    DataContext="{Binding VideoGroupVM}" />
+            <ItemsControl Grid.Row="2"
+                          ItemsSource="{Binding TracksVM}"
+                          Margin="0,0,0,0"
+                          Height="auto"
+                          HorizontalAlignment="Center"
+                          ItemsPanel="{StaticResource ResourceKey=itemsPanel}"
+                          Visibility="Visible">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <view:TrackControl Width="512" Padding="5,0" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <Border Grid.Row="3"
+                    Margin="0"
+                    Background="#00000000">
+                <Border.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="海康监控"
+                                  x:Name="item_HC"
+                                  Click="item_HC_Click" />
+                        <MenuItem Header="日志查看"
+                                  x:Name="item_log"
+                                  Click="item_log_Click" />
+                        <MenuItem Header="交接日志"
+                                  x:Name="Roation"
+                                  Click="Roation_Click" />
+                        <Separator />
+                        <MenuItem Header="程序退出"
+                                  x:Name="item_exit"
+                                  Click="item_exit_Click" />
+                    </ContextMenu>
+                </Border.ContextMenu>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,0">
+                    <Grid>
+                        
+                    </Grid>
+                    <!--<ToggleButton x:Name="tg_canspeek"
+                                  Width="150"
+                                  Height="35"
+                                  Margin="0,0,10,0"
+                                  Style="{StaticResource ToggleButtonStyle}"
+                                  Content="允许语音输出"
+                                  IsChecked="{Binding CanSpeek, Mode=OneWayToSource}" Visibility="Collapsed" />-->
+                    <!--<ToggleButton x:Name="tg_Scence"
+                                  Width="150"
+                                  Height="35"
+                                  Margin="0,0,10,0"
+                                  Style="{StaticResource ToggleButtonStyle}"
+                                  Content="室内操作"
+                                  IsEnabled="False"
+                                  IsChecked="{Binding Scene}" />-->
+                    <ToggleButton x:Name="tg_Auto"
+                                  Width="150"
+                                  Height="24"
+                                  Margin="0,0,10,0"
+                                  Style="{StaticResource ToggleButtonStyle}"
+                                  Content="室内操作"
+                                  IsEnabled="False"
+                                 
+                                  IsChecked="{Binding Scene}" />
+                </StackPanel>
+            </Border>
+            
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKA", "TKA\TKA.csproj", "{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}.Debug|x86.ActiveCfg = Debug|x86
+		{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}.Debug|x86.Build.0 = Debug|x86
+		{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}.Release|x86.ActiveCfg = Release|x86
+		{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {859D68A6-5AAD-436E-BA01-DF06DE35327B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://liuyongqiang.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TKA\\TKA.csproj
+		SccProjectName1 = TKA
+		SccLocalPath1 = TKA
+	EndGlobalSection
+EndGlobal
