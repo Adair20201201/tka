@@ -14,7 +14,7 @@ namespace TKA.ViewModel
     {
         private HCNetSDK_X64.NET_DVR_IPPARACFG_V40 m_struIpParaCfgV40;
         private int dwDCStartChannelNum = 0;
-        public IHCControl w0,w1, w2, w3, e0,e1,e2,e3, wt0, wt1, wt2, wt3, et0, et1, et2, et3;
+        public IHCControl w0,w1, w2, w3,w4,w5,w6,w7, e0,e1,e2,e3,e4,e5,e6,e7, wt0, wt1, wt2, wt3, et0, et1, et2, et3;
                         
                        
                          
@@ -92,6 +92,22 @@ namespace TKA.ViewModel
             {
                 w3.Stop();
             }
+            if (w4 != null)
+            {
+                w4.Stop();
+            }
+            if (w5 != null)
+            {
+                w5.Stop();
+            }
+            if (w6 != null)
+            {
+                w6.Stop();
+            }
+            if (w7 != null)
+            {
+                w7.Stop();
+            }
             if (e0 != null)
             {
                 e0.Stop();
@@ -108,40 +124,22 @@ namespace TKA.ViewModel
             {
                 e3.Stop();
             }
-
-
-            //if (wt0 != null)
-            //{
-            //    wt0.Stop();
-            //}
-            //if (wt1 != null)
-            //{
-            //    wt1.Stop();
-            //}
-            //if (wt2 != null)
-            //{
-            //    wt2.Stop();
-            //}
-            //if (wt3 != null)
-            //{
-            //    wt3.Stop();
-            //}
-            //if (et0 != null)
-            //{
-            //    et0.Stop();
-            //}
-            //if (et1 != null)
-            //{
-            //    et1.Stop();
-            //}
-            //if (et2 != null)
-            //{
-            //    et2.Stop();
-            //}
-            //if (et3 != null)
-            //{
-            //    et3.Stop();
-            //}
+            if (e4 != null)
+            {
+                e4.Stop();
+            }
+            if (e5 != null)
+            {
+                e5.Stop();
+            }
+            if (e6 != null)
+            {
+                e6.Stop();
+            }
+            if (e7 != null)
+            {
+                e7.Stop();
+            }
         }
 
         public void ChangeTrack(int TrackNum)

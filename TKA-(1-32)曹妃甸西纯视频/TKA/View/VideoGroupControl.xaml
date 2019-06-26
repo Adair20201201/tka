@@ -42,12 +42,12 @@
         </Style>
         <Style x:Key="LeftBorderStyle" TargetType="{x:Type Border}">
             <Setter Property="Width"
-                    Value="450" />
+                    Value="285" />
             <Setter Property="HorizontalAlignment" Value="Right"></Setter>
         </Style>
         <Style x:Key="RightBorderStyle" TargetType="{x:Type Border}">
             <Setter Property="Width"
-                    Value="450" />
+                    Value="285" />
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         </Style>
         <view:PlayIntegerToBool x:Key="PlayIntegerToBool" />
@@ -71,9 +71,15 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="60" />
                 <ColumnDefinition Width="*" />
+                
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+                
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -130,7 +136,12 @@
                 </Border>
             </Grid>
             
-            
+            <Grid Grid.Row="0" Grid.Column="1" >
+                
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" >
+
+            </Grid>
             <Border  Grid.Row="0" 
                      Grid.Column="1" 
                      Margin="5"
@@ -163,8 +174,8 @@
                 </WindowsFormsHost>
             </Border>
             
-            <Border  Grid.Row="1" 
-                     Grid.Column="1" 
+            <Border  Grid.Row="0" 
+                     Grid.Column="4" 
                      Margin="5"
                      Padding="5"
                      BorderBrush="#64BFDF"
@@ -173,8 +184,8 @@
                     <con:Control x:Name="w1" Click="w0_Click"/>
                 </WindowsFormsHost>
             </Border>
-            <TextBlock Grid.Row="1" 
-                       Grid.Column="2" 
+            <TextBlock Grid.Row="0" 
+                       Grid.Column="5" 
                        Width="50"
                        VerticalAlignment="Center"
                        Text=""
@@ -184,8 +195,8 @@
                        Foreground="#64BFDF"
                        FontFamily="Microsoft YaHei"
                        FontSize="30" />
-            <Border  Grid.Row="1" 
-                     Grid.Column="3" 
+            <Border  Grid.Row="0" 
+                     Grid.Column="6" 
                      Margin="5"
                      Padding="5"
                      BorderBrush="#64BFDF"
@@ -195,7 +206,7 @@
                 </WindowsFormsHost>
             </Border>
             
-            <Border  Grid.Row="2" 
+            <Border  Grid.Row="1" 
                      Grid.Column="1" 
                      Margin="5"
                      Padding="5"
@@ -205,7 +216,7 @@
                     <con:Control x:Name="w2" Click="w0_Click"/>
                 </WindowsFormsHost>
             </Border>
-            <TextBlock Grid.Row="2" 
+            <TextBlock Grid.Row="1" 
                        Grid.Column="2" 
                        Width="50"
                        VerticalAlignment="Center"
@@ -216,7 +227,7 @@
                        Foreground="#64BFDF"
                        FontFamily="Microsoft YaHei"
                        FontSize="30" />
-            <Border  Grid.Row="2" 
+            <Border  Grid.Row="1" 
                      Grid.Column="3" 
                      Margin="5"
                      Padding="5"
@@ -227,8 +238,8 @@
                 </WindowsFormsHost>
             </Border>
             
-            <Border  Grid.Row="3" 
-                     Grid.Column="1" 
+            <Border  Grid.Row="1" 
+                     Grid.Column="4" 
                      Margin="5"
                      Padding="5"
                      BorderBrush="#64BFDF"
@@ -237,12 +248,108 @@
                     <con:Control x:Name="w3" Click="w0_Click"/>
                 </WindowsFormsHost>
             </Border>
+            <TextBlock Grid.Row="1" 
+                       Grid.Column="5" 
+                       Width="50"
+                       VerticalAlignment="Center"
+                       Text=""
+                       x:Name="tb3"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#64BFDF"
+                       FontFamily="Microsoft YaHei"
+                       FontSize="30" />
+            <Border  Grid.Row="1" 
+                     Grid.Column="6" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="e3" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+
+            <Border  Grid.Row="2" 
+                     Grid.Column="1" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="w4" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+            <TextBlock Grid.Row="2" 
+                       Grid.Column="2" 
+                       Width="50"
+                       VerticalAlignment="Center"
+                       Text=""
+                       x:Name="tb4"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#64BFDF"
+                       FontFamily="Microsoft YaHei"
+                       FontSize="30" />
+            <Border  Grid.Row="2" 
+                     Grid.Column="3" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="e4" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+
+            <Border  Grid.Row="2" 
+                     Grid.Column="4" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="w5" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+            <TextBlock Grid.Row="2" 
+                       Grid.Column="5" 
+                       Width="50"
+                       VerticalAlignment="Center"
+                       Text=""
+                       x:Name="tb5"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#64BFDF"
+                       FontFamily="Microsoft YaHei"
+                       FontSize="30" />
+            <Border  Grid.Row="2" 
+                     Grid.Column="6" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="e5" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+
+            <Border  Grid.Row="3" 
+                     Grid.Column="1" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="w6" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
             <TextBlock Grid.Row="3" 
                        Grid.Column="2" 
                        Width="50"
                        VerticalAlignment="Center"
                        Text=""
-                       x:Name="tb3"
+                       x:Name="tb6"
                        TextAlignment="Center"
                        TextWrapping="Wrap"
                        Foreground="#64BFDF"
@@ -255,11 +362,43 @@
                      BorderBrush="#64BFDF"
                      BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
                 <WindowsFormsHost Background="Black">
-                    <con:Control x:Name="e3" Click="w0_Click"/>
+                    <con:Control x:Name="e6" Click="w0_Click"/>
                 </WindowsFormsHost>
             </Border>
 
-            <Grid Grid.Row="0" Grid.Column="4" Grid.RowSpan="4">
+            <Border  Grid.Row="3" 
+                     Grid.Column="4" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="w7" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+            <TextBlock Grid.Row="3" 
+                       Grid.Column="5" 
+                       Width="50"
+                       VerticalAlignment="Center"
+                       Text=""
+                       x:Name="tb7"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#64BFDF"
+                       FontFamily="Microsoft YaHei"
+                       FontSize="30" />
+            <Border  Grid.Row="3" 
+                     Grid.Column="6" 
+                     Margin="5"
+                     Padding="5"
+                     BorderBrush="#64BFDF"
+                     BorderThickness="1" Style="{StaticResource LeftBorderStyle}">
+                <WindowsFormsHost Background="Black">
+                    <con:Control x:Name="e7" Click="w0_Click"/>
+                </WindowsFormsHost>
+            </Border>
+            
+            <Grid Grid.Row="0" Grid.Column="7" Grid.RowSpan="4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
