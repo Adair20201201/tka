@@ -1,0 +1,307 @@
+﻿<UserControl x:Class="TKA.View.TrackControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:view="clr-namespace:TKA.View"
+             mc:Ignorable="d"
+             d:DesignHeight="90"
+             d:DesignWidth="960">
+    <UserControl.Resources>
+        <!-- Converter -->
+        <view:TrackColorConverter x:Key="TrackColorConverter" />
+        <view:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <view:BreakLightForegroundConverter x:Key="BreakLightForegroundConverter" />
+        <view:LightColorConverter x:Key="LightColorConverter" />
+        <view:GetTwoTrackNumberConverter x:Key="GetTwoTrackNumberConverter"></view:GetTwoTrackNumberConverter>
+    </UserControl.Resources>
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Border x:Name="trackBorder" Padding="15,0"
+            Height="auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="4" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="1" />
+                    </Grid.RowDefinitions>
+
+                    <Grid VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="400" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="400" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="120" />
+                            <!--<ColumnDefinition Width="88" />
+                            <ColumnDefinition Width="58" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="58" />
+                            <ColumnDefinition Width="88" />-->
+                        </Grid.ColumnDefinitions>
+
+                        <!--轨道号和灯-->
+                        <StackPanel Grid.Column="0"  
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,0">
+                            <TextBlock VerticalAlignment="Center"
+                               Margin="5,0,0,0"
+                               Text="{Binding TrackNum,Converter={StaticResource GetTwoTrackNumberConverter}}"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="48"
+                               Foreground="#4CD2FF" />
+                            <Ellipse Width="20"
+                             Height="20" 
+                             Margin="5,20,0,0"
+                             Stroke="White" 
+                             HorizontalAlignment="Left" 
+                             VerticalAlignment="Top" />
+                            <Ellipse Width="14"
+                             Height="14"
+                             Fill="{Binding LeftTrackNumLightState}" 
+                             Margin="-17,23,0,0"
+                             Stroke="White"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top" />
+                        </StackPanel>
+
+                        <!--方块灯和上箭头-->
+                        <StackPanel Grid.Column="1"
+                            Orientation="Vertical"
+                            HorizontalAlignment="Left"
+                            Margin="-5,0,0,0">
+                            <Image Visibility="{Binding LeftCubeAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Width="60"
+                           Height="30"
+                           HorizontalAlignment="Center"
+                           Source="pack://application:,,,/Style/Image/CubeLight.png" />
+                            <Image Visibility="{Binding LeftUpArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Width="50"
+                           Height="20"
+                           HorizontalAlignment="Center"
+                           Source="pack://application:,,,/Style/Image/UpBreakLeft.png" />
+                        </StackPanel>
+
+                        <!--申请上下脱和时间-->
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="0"
+                               Text="申请上脱"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding LeftApplyForUpDetachAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Red" />
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="0"
+                               Text="申请下脱"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding LeftApplyForDownDetachAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Green" />
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="1"
+                               Text="{Binding UpBreakTime}"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding LeftUpArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Red" />
+                        </Grid>
+
+                        <!--允许对应，供电对应，撤对应-->
+                        <Grid Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <Ellipse Width="20"
+                                 Height="20"
+                                 Fill="{Binding Allow,Converter={StaticResource LightColorConverter},ConverterParameter=允许}"
+                                 Stretch="Fill"/>
+                                <TextBlock Margin="5,0,0,0"
+		                        HorizontalAlignment="Center"
+		                        VerticalAlignment="Center"
+		                        Opacity="1"
+		                        TextWrapping="Wrap"
+		                        FontSize="16"
+		                        FontFamily="MicrosoftYaHei"
+		                        TextAlignment="left"
+		                        Foreground="#dddddd"
+		                        Text="允许" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <Ellipse Width="20"
+                                 Height="20"
+                                 Fill="{Binding Prower,Converter={StaticResource LightColorConverter},ConverterParameter=供电}"
+                                 Stretch="Fill"/>
+                                <TextBlock  Margin="5,0,0,0"
+		                       HorizontalAlignment="Center"
+		                        VerticalAlignment="Center"
+		                        Opacity="1"
+		                        TextWrapping="Wrap"
+		                        FontSize="16"
+		                        FontFamily="MicrosoftYaHei"
+		                        TextAlignment="left"
+		                        Foreground="#dddddd"
+		                        Text="供电" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <Ellipse Width="20"
+                                 Height="20"
+                                 Fill="{Binding Remove,Converter={StaticResource LightColorConverter},ConverterParameter=撤}"
+                                 Stretch="Fill"/>
+                                <TextBlock  Margin="5,0,0,0"
+		                        HorizontalAlignment="Center"
+		                        VerticalAlignment="Center"
+		                        Opacity="1"
+		                        TextWrapping="Wrap"
+		                        FontSize="16"
+		                        FontFamily="MicrosoftYaHei"
+		                        TextAlignment="left"
+		                        Foreground="#dddddd"
+		                        Text="撤脱" />
+                            </StackPanel>
+                        </Grid>
+
+                        <!--申请上下脱和时间累计-->
+                        <Grid Grid.Column="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="1"
+                               Text="{Binding UpBreakConstant}"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding LeftUpArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Gray" />
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="2"
+                               Text="申请上脱"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding RightApplyForUpDetachAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Red" />
+                            <TextBlock VerticalAlignment="Center"
+                               Grid.Column="2"
+                               Text="申请下脱"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="16"
+                               Visibility="{Binding RightApplyForDownDetachAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               Foreground="Green" />
+
+                        </Grid>
+
+                        <!--方块灯和上箭头-->
+                        <StackPanel Grid.Column="5"
+                            Orientation="Vertical"
+                            HorizontalAlignment="Right"
+                            Margin="-5,0,0,0">
+                            <Image Visibility="{Binding RightCubeAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Width="60"
+                           Height="30"
+                           HorizontalAlignment="Center"
+                           Source="pack://application:,,,/Style/Image/CubeLight.png" />
+                            <Image Visibility="{Binding RightUpArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Width="50"
+                           Height="20"
+                           HorizontalAlignment="Center"
+                           Source="pack://application:,,,/Style/Image/UpBreakRight.png" />
+                        </StackPanel>
+
+                        <!--轨道号和灯-->
+                        <StackPanel Grid.Column="6"  
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,0,0,0">
+                            <Ellipse Width="14"
+                             Height="14"
+                             Fill="{Binding RightTrackNumLightState}" 
+                             Margin="0,23,-17,0"
+                             Stroke="White"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Top" />
+                            <Ellipse Width="20"
+                             Height="20" 
+                             Margin="0,20,5,0"
+                             Stroke="White" 
+                             HorizontalAlignment="Right" 
+                             VerticalAlignment="Top" />
+                            <TextBlock VerticalAlignment="Center"
+                               Text="{Binding TrackNum,Converter={StaticResource GetTwoTrackNumberConverter}}"
+                               Margin="0,0,5,0"
+                               FontFamily="Microsoft YaHei"
+                               FontSize="48"
+                               Foreground="#4CD2FF" />
+                        </StackPanel>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Height="4"
+                        Background="{Binding LeftTrackState}" />
+                        <Border Grid.Column="1"
+                        Height="4"
+                        Background="{Binding RightTrackState}" />
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Image x:Name="img_DownBreakLeft"
+                       Visibility="{Binding LeftDownArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Width="50"
+                       Height="20"    
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="88,0,0,0"
+                       Source="pack://application:,,,/Style/Image/DownBreakLeft.png" />
+                        <Image x:Name="img_DownBreakRight"
+                       Visibility="{Binding RightDownArrowAddressValue, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Width="50"
+                       Height="20"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       Margin="0,0,93,0"
+                       Source="pack://application:,,,/Style/Image/DownBreakRight.png" />
+                    </Grid>
+
+                    <Border Grid.Row="3"
+                    Height="1"
+                    Background="#B7B7B7"
+                    Opacity="0.2"
+                    VerticalAlignment="Bottom" />
+
+                </Grid>
+            </Border>
+            <!--<ControlTemplate.Triggers>
+                <DataTrigger Binding="{Binding TrackNum}"
+                             Value="3">
+                    <Setter TargetName="trackBorder"
+                            Property="Margin"
+                            Value="0,480,0,0" />
+                </DataTrigger>
+                
+            </ControlTemplate.Triggers>-->
+        </ControlTemplate>
+    </UserControl.Template>
+
+    
+</UserControl>
