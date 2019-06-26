@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57418FC5-03A1-4BF9-BC7D-51C6D64386C8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TKA</RootNamespace>
+    <AssemblyName>TKA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>Refence\Quartz\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>Refence\Quartz\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Business\Access.cs" />
+    <Compile Include="Business\Global.cs" />
+    <Compile Include="Business\GolbalColors.cs" />
+    <Compile Include="Business\HCNetSDK.cs" />
+    <Compile Include="Business\HCControler.cs" />
+    <Compile Include="Business\PlayCtrl.cs" />
+    <Compile Include="Business\PLCControler.cs" />
+    <Compile Include="Business\TimeDeleteJob.cs" />
+    <Compile Include="Helper\SystemHelper.cs" />
+    <Compile Include="Helper\XMLHelper.cs" />
+    <Compile Include="Model\Camera.cs" />
+    <Compile Include="Model\Channel.cs" />
+    <Compile Include="Model\ConfigModel.cs" />
+    <Compile Include="Model\TrackModel.cs" />
+    <Compile Include="Model\TrackVideo.cs" />
+    <Compile Include="View\SelectReplayDateTimeWindow.xaml.cs">
+      <DependentUpon>SelectReplayDateTimeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SetPitchRotateWindow.xaml.cs">
+      <DependentUpon>SetPitchRotateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoZoomInWindow.xaml.cs">
+      <DependentUpon>VideoZoomInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewModel\FingerViewModel.cs" />
+    <Compile Include="View\ViewModel\SelectReplayDateTimeWindowViewModel.cs" />
+    <Compile Include="View\ViewModel\SetPitchRotateWindowViewModel.cs" />
+    <Compile Include="View\ViewModel\TrackWarningViewModel.cs" />
+    <Compile Include="View\ViewModel\BaseCommand.cs" />
+    <Compile Include="View\ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\ViewModel\TrackViewModel.cs" />
+    <Compile Include="View\ViewModel\VideoGroupViewModel.cs" />
+    <Compile Include="View\ViewModel\VideoZoomInWindowViewModel.cs" />
+    <Compile Include="View\ViewModel\WarningViewModel.cs" />
+    <Compile Include="View\Converters.cs" />
+    <Compile Include="View\FingerprintWindow.xaml.cs">
+      <DependentUpon>FingerprintWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RotationLog.xaml.cs">
+      <DependentUpon>RotationLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TitleControl.xaml.cs">
+      <DependentUpon>TitleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrackControl.xaml.cs">
+      <DependentUpon>TrackControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoGroupControl.xaml.cs">
+      <DependentUpon>VideoGroupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\WarningControl.xaml.cs">
+      <DependentUpon>WarningControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\FingerprintWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\RotationLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelectReplayDateTimeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SetPitchRotateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TitleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoZoomInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WarningControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Style\Font\微软简老宋.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\Image\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\Image\Maximize.png" />
+    <Resource Include="Style\Image\AllowLight.png" />
+    <Resource Include="Style\Image\UnAllowLight.png" />
+    <None Include="TrackCameraConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrackModelConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Style\Image\Able.png" />
+    <Resource Include="Style\Image\CircleLightGreen.png" />
+    <None Include="log.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Refence\Quartz\Common.Logging.dll" />
+    <Content Include="Refence\Quartz\Quartz.dll" />
+    <Content Include="Refence\Quartz\Quartz.pdb" />
+    <Content Include="Refence\System.Windows.Interactivity.dll" />
+    <Resource Include="Refence\System.Windows.Interactivity.xml" />
+    <Content Include="Refence\X64dll\D3DX9_41.dll" />
+    <Content Include="Refence\X64dll\HCNetSDK.dll" />
+    <Content Include="Refence\X64dll\MP_Render.dll" />
+    <Content Include="Refence\X64dll\OpenAL32.dll" />
+    <Content Include="Refence\X64dll\PlayCtrl.dll" />
+    <Content Include="Refence\X64dll\StreamTransClient.dll" />
+    <Content Include="Refence\X64dll\SystemTransform.dll" />
+    <Content Include="Refence\X86dll\AudioIntercom.dll" />
+    <Content Include="Refence\X86dll\DsSdk.dll" />
+    <Content Include="Refence\X86dll\gdiplus.dll" />
+    <Content Include="Refence\X86dll\HCNetSDK.dll" />
+    <Content Include="Refence\X86dll\OpenAL32.dll" />
+    <Content Include="Refence\X86dll\PlayCtrl.dll" />
+    <Content Include="Refence\X86dll\QosControl.dll" />
+    <Content Include="Refence\X86dll\StreamTransClient.dll" />
+    <Content Include="Refence\X86dll\SystemTransform.dll" />
+    <Resource Include="Style\Image\Calendar.png" />
+    <Resource Include="Style\Image\CloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\Image\DownBreakLeft.png" />
+    <Resource Include="Style\Image\DownBreakRight.png" />
+    <Resource Include="Style\Image\CircleLight.png" />
+    <Resource Include="Style\Image\CubeLight.png" />
+    <Resource Include="Style\Image\UpBreakLeft.png" />
+    <Resource Include="Style\Image\UpBreakRight.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>md X64dll
+md X86dll
+copy ..\..\Refence\X64dll\. X64dll\
+copy ..\..\Refence\X86dll\. X86dll\</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
