@@ -1,0 +1,491 @@
+﻿<UserControl x:Class="TKA.View.VideoGroupControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:view="clr-namespace:TKA.View"
+             xmlns:con="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="1920"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Style x:Key="RadioButtonStyle"
+               TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontFamily"
+                    Value="Microsoft YaHei" />
+            <Setter Property="FontSize"
+                    Value="16" />
+            <Setter Property="Background"
+                    Value="#6B7B80" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked"
+                                     Value="true">
+                                <Setter Property="Background"
+                                        Value="#3A9BB0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <view:PlayIntegerToBool x:Key="PlayIntegerToBool" />
+        <view:GetIschecked x:Key="GetIschecked" />
+    </UserControl.Resources>
+
+    <Grid Background="#0C262E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                        <WindowsFormsHost Background="Black">
+                            <con:Control x:Name="WestThroatVideo" Tag="WestThroatVideo3" Click="WestThroatVideo_Click"/>
+                        </WindowsFormsHost>
+                    </Border>
+                </Grid>
+
+                <Border Grid.Column="1"
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                    <WindowsFormsHost Background="Black">
+                        <con:Control x:Name="WestTrackVideo" />
+                    </WindowsFormsHost>
+                </Border>
+                <Border Grid.Column="2"
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                    <WindowsFormsHost Background="Black">
+                        <con:Control x:Name="WestTrackZoomVideo" />
+                    </WindowsFormsHost>
+                </Border>
+            </Grid>
+
+            <TextBlock Width="36"
+                       VerticalAlignment="Center"
+                       Text="{Binding TrackNum}"
+                       x:Name="tb_tracknum"
+                       Grid.Column="1"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Foreground="#64BFDF"
+                       FontFamily="Microsoft YaHei"
+                       FontSize="30" />
+
+            <Grid Grid.Column="2"
+                  Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                    <WindowsFormsHost Background="Black">
+                        <con:Control x:Name="EastTrackZoomVideo" />
+                    </WindowsFormsHost>
+                </Border>
+                <Border Grid.Column="1"
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                    <WindowsFormsHost Background="Black">
+                        <con:Control x:Name="EastTrackVideo" />
+                    </WindowsFormsHost>
+                </Border>
+
+                <Grid Grid.Column="2">
+                    <Border 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                        <WindowsFormsHost Background="Black">
+                            <con:Control x:Name="EastThroatVideo" Tag="WestThroatVideo4" Click="WestThroatVideo_Click"/>
+                        </WindowsFormsHost>
+                    </Border>
+                  
+                </Grid>
+                <!--<Border Grid.Column="2"
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#64BFDF"
+                        BorderThickness="1">
+                    <WindowsFormsHost Background="Black">
+                        <con:Control x:Name="EastThroatVideo"  Tag="EastThroatVideo" Click="WestThroatVideo_Click" />
+                    </WindowsFormsHost>
+                </Border>-->
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Margin="15,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="rb1"
+                         Grid.Column="0"
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A16道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A16道}"
+                         Checked="RadioButton_Checked"
+                         Tag="A16" />
+            <RadioButton x:Name="rb2"
+                         Grid.Column="1"
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A15道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A15道}"
+                         Checked="RadioButton_Checked"
+                         Tag="A15" />
+            <RadioButton x:Name="rb3"
+                         Grid.Column="2"
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A14道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A14道}"
+                         Checked="RadioButton_Checked"
+                         Tag="A14" />
+            <RadioButton x:Name="rb4"
+                         Grid.Column="3"
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A13道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A13道}"
+                         Checked="RadioButton_Checked"
+                         Tag="A13" />
+            <RadioButton x:Name="rb5" Grid.Column="4" 
+                         Style="{StaticResource RadioButtonStyle}" 
+                          
+                         Margin="0,5,5,5" 
+                         Content="A12道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A12道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A12" />
+            <RadioButton x:Name="rb6" Grid.Column="5" 
+                         Style="{StaticResource RadioButtonStyle}" 
+                          
+                         Margin="0,5,5,5"
+                         Content="A11道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A11道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A11" />
+            <RadioButton x:Name="rb7"
+                         Grid.Column="6" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A10道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A10道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A10"/>
+            <RadioButton x:Name="rb8"
+                         Grid.Column="7" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5" 
+                         Content="A09道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A09道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A09"/>
+            <RadioButton x:Name="rb9"
+                         Grid.Column="8" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A08道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A08道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A08"/>
+            <RadioButton x:Name="rb10"
+                         Grid.Column="9" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5" 
+                         Content="A07道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A07道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A07"/>
+            <RadioButton x:Name="rb11"
+                         Grid.Column="10" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A06道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A06道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A06"/>
+            <RadioButton x:Name="rb12"
+                         Grid.Column="11" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5" 
+                         Content="A05道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A05道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A05"/>
+            <RadioButton x:Name="rb13"
+                         Grid.Column="12" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5" 
+                         Content="A04道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A04道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A04"/>
+            <RadioButton x:Name="rb14"
+                         Grid.Column="13" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5" 
+                         Content="A03道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A03道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A03"/>
+            <RadioButton x:Name="rb15"
+                         Grid.Column="14" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,5,5"
+                         Content="A02道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A02道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A02"/>
+            <RadioButton x:Name="rb16"
+                         Grid.Column="15" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="0,5,0,5"
+                         Content="A01道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=A01道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="A01"/>
+            <RadioButton x:Name="rb17"
+                         Grid.Column="16" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B16道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B16道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B16"/>
+            <RadioButton x:Name="rb18"
+                         Grid.Column="17" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B15道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B15道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B15"/>
+            <RadioButton x:Name="rb19"
+                         Grid.Column="18" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B14道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B14道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B14"/>
+            <RadioButton x:Name="rb20"
+                         Grid.Column="19" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B13道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B13道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B13"/>
+            <RadioButton x:Name="rb21"
+                         Grid.Column="20" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B12道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B12道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B12"/>
+            <RadioButton x:Name="rb22"
+                         Grid.Column="21" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B11道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B11道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B11"/>
+            <RadioButton x:Name="rb23"
+                         Grid.Column="22" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B10道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B10道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B10"/>
+            <RadioButton x:Name="rb24"
+                         Grid.Column="23" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B09道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B09道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B09"/>
+            <RadioButton x:Name="rb25"
+                         Grid.Column="24" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B08道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B08道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B08"/>
+            <RadioButton x:Name="rb26"
+                         Grid.Column="25" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B07道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B07道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B07"/>
+            <RadioButton x:Name="rb27"
+                         Grid.Column="26" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B06道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B06道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B06"/>
+            <RadioButton x:Name="rb28"
+                         Grid.Column="27" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B05道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B05道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B05"/>
+            <RadioButton x:Name="rb29"
+                         Grid.Column="28" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B04道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B04道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B04"/>
+            <RadioButton x:Name="rb30"
+                         Grid.Column="29" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B03道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B03道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B03"/>
+            <RadioButton x:Name="rb31"
+                         Grid.Column="30" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B02道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B02道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B02"/>
+            <RadioButton x:Name="rb32"
+                         Grid.Column="31" 
+                         Style="{StaticResource RadioButtonStyle}"
+                         
+                         Margin="5,5,0,5" 
+                         Content="B01道"
+                         Background="{Binding TrackNum,Converter={StaticResource GetIschecked},ConverterParameter=B01道}"
+                         Checked="RadioButton_Checked" 
+                         Tag="B01"/>
+        </Grid>
+
+        <Border Grid.Row="1"
+                Height="1"
+                Background="#B7B7B7"
+                Opacity="0.2"
+                VerticalAlignment="Bottom" />
+    </Grid>
+</UserControl>
