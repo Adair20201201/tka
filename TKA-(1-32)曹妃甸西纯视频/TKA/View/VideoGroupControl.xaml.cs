@@ -29,7 +29,7 @@ namespace TKA.View
         private HCNetSDK_X64.NET_DVR_IPPARACFG_V40 m_struIpParaCfgV40;
         private uint dwAChanTotalNum = 0;
         private int dwDCStartChannelNum = 0;
-        private int[] iChannelNum = new int[96];
+        private int[] iChannelNum = new int[128];
         /// <summary>
         /// 关闭所有的视频
         /// </summary>
