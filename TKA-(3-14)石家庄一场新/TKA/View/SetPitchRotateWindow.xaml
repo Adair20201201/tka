@@ -1,0 +1,298 @@
+﻿<Window x:Class="TKA.View.SetPitchRotateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TKA.View"
+        mc:Ignorable="d"
+        Title="SetPitchRotateWindow"
+        Height="280"
+        Width="415"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Window.Resources>
+        <!--ExitButton Style-->
+        <Style x:Key="ExitButtonStyle"
+               TargetType="{x:Type Button}">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- button style -->
+        <Style x:Key="CommonButtonStyle"
+               TargetType="{x:Type Button}">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Height="38"
+                              Width="103"
+                              Background="{x:Null}"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top">
+                            <Path Margin="2,2,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Height="35"
+                                  Width="100"
+                                  Stretch="Fill"
+                                  Opacity="1"
+                                  Data="M 102,2 C102,2 2,2 2,2 2,2 2,37 2,37 2,37 102,37 102,37 102,37 102,2 102,2 z"
+                                  x:Name="background">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.745107421875,-0.35135149274553573"
+                                                         EndPoint="0.745107421875,2.3150320870535714">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0" />
+                                                <GradientStop Color="#FF008acc"
+                                                              Offset="0.06666699796915054" />
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0.9777780175209045" />
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Margin="2.200927734375,2.38427734375,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Height="34.2314453125"
+                                  Width="99.799072265625"
+                                  Stretch="Fill"
+                                  Opacity="0.25098039215686274"
+                                  Data="M 102,36.61572265625 C102,36.61572265625 2.200927734375,36.61572265625 2.200927734375,36.61572265625 2.200927734375,36.61572265625 2.200927734375,2.38427734375 2.200927734375,2.38427734375 "
+                                  Stroke="#000000"
+                                  StrokeThickness="1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,-0.276338687130916"
+                                                         EndPoint="0.5,1.8290160613927482">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0" />
+                                                <GradientStop Color="#FF008acc"
+                                                              Offset="0.06666699796915054" />
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0.9777780175209045" />
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Margin="2.681884765625,2.9459228515625,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Height="33.38739013671875"
+                                  Width="98.318115234375"
+                                  Stretch="Fill"
+                                  Opacity="0.25098039215686274"
+                                  Data="M 2.681884765625,2.9459228515625 C2.681884765625,2.9459228515625 101,2.9459228515625 101,2.9459228515625 101,2.9459228515625 101,36.33331298828125 101,36.33331298828125 "
+                                  Stroke="#ffffff"
+                                  StrokeThickness="1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.5050855328014382,-0.2833228827517874"
+                                                         EndPoint="0.5050855328014382,1.8416069642919168">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0" />
+                                                <GradientStop Color="#FF008acc"
+                                                              Offset="0.06666699796915054" />
+                                                <GradientStop Color="#FF66ccff"
+                                                              Offset="0.9777780175209045" />
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="true">
+                                <Setter TargetName="background"
+                                        Property="Fill">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#66CCFF" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#2A2A2A" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed"
+                                     Value="true">
+                                <Setter Property="Fill"
+                                        TargetName="background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.755814208984375,-0.33530447823660714"
+                                                             EndPoint="0.755814208984375,2.3310825892857143">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStopCollection>
+                                                    <GradientStop Color="#FF66ccff"
+                                                                  Offset="0" />
+                                                    <GradientStop Color="#FF00699b"
+                                                                  Offset="0.07222200185060501" />
+                                                    <GradientStop Color="#FF66ccff"
+                                                                  Offset="0.9833329916000366" />
+                                                </GradientStopCollection>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FFFFFF" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBlockStyle"
+               TargetType="TextBox">
+            <Setter Property="BorderThickness"
+                    Value="1" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#040D10" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+            </Grid.RowDefinitions>
+            <TextBlock FontFamily="pack://application:,,,/Style/Font/#微软简老宋"
+                       Text="设置参数"
+                       FontSize="25"
+                       Foreground="White"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="21,20,0,0"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" />
+            <Button Height="41"
+                    Width="46"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="0,1,21,0"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"    
+                    Style="{StaticResource ExitButtonStyle}">
+                <Image Source="pack://application:,,,/Style/Image/CloseButton.png"
+                       Width="46"
+                       Height="41" />
+            </Button>
+            <Path Grid.Row="1"
+                  StrokeThickness="1"
+                  Grid.ColumnSpan="2"
+                  Stroke="#3E3E3E"
+                  Data="M 21,0 H 394" />
+        </Grid>
+        <Grid Grid.Row="1"
+              Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       FontFamily="Microsoft Yahei"
+                       FontSize="16"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="50,0,0,0"
+                       Grid.Row="0">初始俯仰角：</TextBlock>
+            <TextBlock Grid.Column="0"
+                       FontFamily="Microsoft Yahei"
+                       FontSize="16"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="50,0,0,0"
+                       Grid.Row="1">初始滚转角：</TextBlock>
+            <TextBox BorderBrush="#888888"
+                     Background="Transparent"
+                     BorderThickness="1"
+                     Height="32"
+                     Width="172"
+                     FontSize="16"
+                     VerticalAlignment="Center"
+                     Foreground="White"
+                     Grid.Column="1"
+                     Grid.Row="0"></TextBox>
+            <TextBox BorderBrush="#888888"
+                     Background="Transparent"
+                     BorderThickness="1"
+                     Height="32"
+                     Width="172"
+                     FontSize="16"
+                     VerticalAlignment="Center"
+                     Foreground="White"
+                     Grid.Column="1"
+                     Grid.Row="1"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    Margin="50,0,0,20"
+                    FontFamily="Microsoft Yahei"
+                    FontSize="16"
+                    Style="{StaticResource CommonButtonStyle}">确定</Button>
+            <Button Grid.Column="1"
+                    Margin="50,0,0,20"
+                    FontFamily="Microsoft Yahei"
+                    FontSize="16"
+                    Style="{StaticResource CommonButtonStyle}">取消</Button>
+        </Grid>
+    </Grid>
+</Window>
