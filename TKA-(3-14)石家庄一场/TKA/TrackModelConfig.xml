@@ -14,7 +14,7 @@
       <RightApplyForUpDetachAddress>00413</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04011</RightApplyForDownDetachAddress>
       <AllowAddress>00408</AllowAddress>
-      <PowerAddress>10005</PowerAddress>
+      <PowerAddress>01005</PowerAddress>
       <RemoveAddress>00412</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -61,7 +61,7 @@
       <RightApplyForUpDetachAddress>00405</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04009</RightApplyForDownDetachAddress>
       <AllowAddress>00400</AllowAddress>
-      <PowerAddress>10004</PowerAddress>
+      <PowerAddress>01004</PowerAddress>
       <RemoveAddress>00404</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -108,7 +108,7 @@
       <RightApplyForUpDetachAddress>00313</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04007</RightApplyForDownDetachAddress>
       <AllowAddress>00308</AllowAddress>
-      <PowerAddress>10003</PowerAddress>
+      <PowerAddress>01003</PowerAddress>
       <RemoveAddress>00312</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -155,7 +155,7 @@
       <RightApplyForUpDetachAddress>00305</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04005</RightApplyForDownDetachAddress>
       <AllowAddress>00300</AllowAddress>
-      <PowerAddress>10002</PowerAddress>
+      <PowerAddress>01002</PowerAddress>
       <RemoveAddress>00304</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -202,7 +202,7 @@
       <RightApplyForUpDetachAddress>00213</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04003</RightApplyForDownDetachAddress>
       <AllowAddress>00208</AllowAddress>
-      <PowerAddress>10001</PowerAddress>
+      <PowerAddress>01001</PowerAddress>
       <RemoveAddress>00212</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -249,7 +249,7 @@
       <RightApplyForUpDetachAddress>00205</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04001</RightApplyForDownDetachAddress>
       <AllowAddress>00200</AllowAddress>
-      <PowerAddress>10000</PowerAddress>
+      <PowerAddress>01000</PowerAddress>
       <RemoveAddress>00204</RemoveAddress>
       <!--语音文字提示-->
       <!--脱轨器上方异常-->
@@ -297,7 +297,7 @@
       <RightApplyForUpDetachAddress>00713</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04107</RightApplyForDownDetachAddress>
       <AllowAddress>00708</AllowAddress>
-      <PowerAddress>10011</PowerAddress>
+      <PowerAddress>01011</PowerAddress>
       <RemoveAddress>00712</RemoveAddress>
 
       <!--语音文字提示-->
@@ -330,7 +330,7 @@
       <RightApplyForUpDetachAddress>00705</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04105</RightApplyForDownDetachAddress>
       <AllowAddress>00700</AllowAddress>
-      <PowerAddress>10010</PowerAddress>
+      <PowerAddress>01010</PowerAddress>
       <RemoveAddress>00704</RemoveAddress>
 
       <!--语音文字提示-->
@@ -378,7 +378,7 @@
       <RightApplyForUpDetachAddress>00613</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04103</RightApplyForDownDetachAddress>
       <AllowAddress>00608</AllowAddress>
-      <PowerAddress>10009</PowerAddress>
+      <PowerAddress>01009</PowerAddress>
       <RemoveAddress>00612</RemoveAddress>
 
       <!--语音文字提示-->
@@ -426,7 +426,7 @@
       <RightApplyForUpDetachAddress>00605</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04101</RightApplyForDownDetachAddress>
       <AllowAddress>00600</AllowAddress>
-      <PowerAddress>10008</PowerAddress>
+      <PowerAddress>01008</PowerAddress>
       <RemoveAddress>00604</RemoveAddress>
 
       <!--语音文字提示-->
@@ -474,7 +474,7 @@
       <RightApplyForUpDetachAddress>00513</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04015</RightApplyForDownDetachAddress>
       <AllowAddress>00508</AllowAddress>
-      <PowerAddress>10007</PowerAddress>
+      <PowerAddress>01007</PowerAddress>
       <RemoveAddress>00512</RemoveAddress>
 
       <!--语音文字提示-->
@@ -522,7 +522,7 @@
       <RightApplyForUpDetachAddress>00505</RightApplyForUpDetachAddress>
       <RightApplyForDownDetachAddress>04013</RightApplyForDownDetachAddress>
       <AllowAddress>00500</AllowAddress>
-      <PowerAddress>10006</PowerAddress>
+      <PowerAddress>01006</PowerAddress>
       <RemoveAddress>00504</RemoveAddress>
 
       <!--语音文字提示-->

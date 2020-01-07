@@ -482,7 +482,8 @@ namespace TKA
             PlayCtrl_X64.PlayM4_CloseStream(ClientPort);
             PlayCtrl_X64.PlayM4_FreePort(ClientPort);
             HCNetSDK_X64.NET_DVR_StopRealPlay(RealHandle);
-            this.control.Invalidate();
+            
+            //this.control.Invalidate();
         }
 
 

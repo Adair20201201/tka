@@ -52,7 +52,7 @@ namespace TKA.ViewModel
                     WarningDataTime = notification.DateTime;
                     WarningText = notification.TrackNumber.ToString() + notification.NotifyInfo;
                     IsWarning = notification.IsWarning;
-                    synth.Speak(notification.TrackNumber.ToString() + notification.NotifyInfo);
+                    //synth.Speak(notification.TrackNumber.ToString() + notification.NotifyInfo);
                     synth.Speak(notification.TrackNumber.ToString() + notification.NotifyInfo);
 
                     PLCControler.Instence.ReSetChannel(PLCControler.Instence.MWVM.CM.SpeekAddress);

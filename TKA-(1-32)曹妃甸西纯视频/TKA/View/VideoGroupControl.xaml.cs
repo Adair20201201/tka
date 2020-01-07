@@ -201,15 +201,124 @@ namespace TKA.View
 
                 VGVM.CloseAll();
 
-                if (isOver)
+                //if (isOver)
+                //{
+                //    thread = new Thread(PlayVideo);
+                //    thread.IsBackground = true;
+                //    thread.Start();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("加载中...");
+                //}
+                for (int i = 0; i < list.Count; i++)
                 {
-                    thread = new Thread(PlayVideo);
-                    thread.IsBackground = true;
-                    thread.Start();
-                }
-                else
-                {
-                    MessageBox.Show("加载中...");
+                    string track = list[i].ToString();
+                    string[] arr = track.Split(',');
+                    if (i == 0)
+                    {
+                        w0.Visible = true;
+                        e0.Visible = true;
+                        tb0.Text = arr[0];
+                        VGVM.w0 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w0.Handle, 0);
+                        VGVM.e0 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e0.Handle, 0);
+                        VGVM.w0.Play();
+                        VGVM.e0.Play();
+
+                        w0.Tag = arr[1];
+                        e0.Tag = arr[2];
+                    }
+                    if (i == 1)
+                    {
+                        w1.Visible = true;
+                        e1.Visible = true;
+                        tb1.Text = arr[0];
+                        VGVM.w1 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w1.Handle, 0);
+                        VGVM.e1 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e1.Handle, 0);
+                        VGVM.w1.Play();
+                        VGVM.e1.Play();
+
+                        w1.Tag = arr[1];
+                        e1.Tag = arr[2];
+                    }
+                    if (i == 2)
+                    {
+                        w2.Visible = true;
+                        e2.Visible = true;
+                        tb2.Text = arr[0];
+                        VGVM.w2 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w2.Handle, 0);
+                        VGVM.e2 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e2.Handle, 0);
+                        VGVM.w2.Play();
+                        VGVM.e2.Play();
+
+                        w2.Tag = arr[1];
+                        e2.Tag = arr[2];
+                    }
+                    if (i == 3)
+                    {
+                        w3.Visible = true;
+                        e3.Visible = true;
+                        tb3.Text = arr[0];
+                        VGVM.w3 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w3.Handle, 0);
+                        VGVM.e3 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e3.Handle, 0);
+                        VGVM.w3.Play();
+                        VGVM.e3.Play();
+
+                        w3.Tag = arr[1];
+                        e3.Tag = arr[2];
+                    }
+                    if (i == 4)
+                    {
+                        w4.Visible = true;
+                        e4.Visible = true;
+                        tb4.Text = arr[0];
+                        VGVM.w4 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w4.Handle, 0);
+                        VGVM.e4 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e4.Handle, 0);
+                        VGVM.w4.Play();
+                        VGVM.e4.Play();
+
+                        w4.Tag = arr[1];
+                        e4.Tag = arr[2];
+                    }
+                    if (i == 5)
+                    {
+                        w5.Visible = true;
+                        e5.Visible = true;
+                        tb5.Text = arr[0];
+                        VGVM.w5 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w5.Handle, 0);
+                        VGVM.e5 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e5.Handle, 0);
+                        VGVM.w5.Play();
+                        VGVM.e5.Play();
+
+                        w5.Tag = arr[1];
+                        e5.Tag = arr[2];
+                    }
+                    if (i == 6)
+                    {
+                        w6.Visible = true;
+                        e6.Visible = true;
+                        tb6.Text = arr[0];
+                        VGVM.w6 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w6.Handle, 0);
+                        VGVM.e6 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e6.Handle, 0);
+                        VGVM.w6.Play();
+                        VGVM.e6.Play();
+
+                        w6.Tag = arr[1];
+                        e6.Tag = arr[2];
+                    }
+                    if (i == 7)
+                    {
+                        w7.Visible = true;
+                        e7.Visible = true;
+                        tb7.Text = arr[0];
+                        VGVM.w7 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[1]) + dwDCStartChannelNum, w7.Handle, 0);
+                        VGVM.e7 = HC_SDKFactory.factory(HCUserID, int.Parse(arr[2]) + dwDCStartChannelNum, e7.Handle, 0);
+                        VGVM.w7.Play();
+                        VGVM.e7.Play();
+
+                        w7.Tag = arr[1];
+                        e7.Tag = arr[2];
+                    }
                 }
             }
         }

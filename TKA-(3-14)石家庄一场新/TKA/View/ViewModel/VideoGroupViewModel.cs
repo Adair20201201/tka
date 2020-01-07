@@ -139,7 +139,7 @@ namespace TKA.ViewModel
             if (WestTrackVideoControl != null && WestTrackZoomVideoControl != null && EastTrackZoomVideoControl != null && EastTrackVideoControl != null)
             {
                 TwoCamera tc = TV.TakeCameraConfigByTrackNum(TrackNum);
-
+                
                 WestTrackVideoControl.ChangePlay(tc.West.Channel + dwDCStartChannelNum);
                 WestTrackZoomVideoControl.TrackNum = TrackNum;
                 WestTrackZoomVideoControl.ChangePlay(tc.West.Channel + dwDCStartChannelNum);
@@ -168,7 +168,7 @@ namespace TKA.ViewModel
             uint dwReturn = 0;
             if (!HCNetSDK_X64.NET_DVR_GetDVRConfig(HCUserID, HCNetSDK_X64.NET_DVR_GET_IPPARACFG_V40, 0, ptrIpParaCfgV40, dwSize, ref dwReturn))
             {
-                MessageBox.Show("Net NVR Failed! Code :" + HCNetSDK_X64.NET_DVR_GetLastError());
+                //MessageBox.Show("Net NVR Failed! Code :" + HCNetSDK_X64.NET_DVR_GetLastError());
             }
             else
             {

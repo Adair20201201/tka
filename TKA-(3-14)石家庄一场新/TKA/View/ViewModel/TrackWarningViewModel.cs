@@ -12,18 +12,18 @@ namespace TKA.ViewModel
         /// <summary>
         /// the information of notification
         /// </summary>
-        private static string NoteLeftUpDetaching_NotifyInfo = "道已上脱";
-        private static string NoteRightUpDetaching_NotifyInfo = "道已上脱";
-        private static string NoteLeftDownDetaching_NotifyInfo = "道已下脱";
-        private static string NoteRightDownDetaching_NotifyInfo = "道已下脱";
+        private static string NoteLeftUpDetaching_NotifyInfo = "道西头已上脱";
+        private static string NoteRightUpDetaching_NotifyInfo = "道东头已上脱";
+        private static string NoteLeftDownDetaching_NotifyInfo = "道西头已下脱";
+        private static string NoteRightDownDetaching_NotifyInfo = "道东头已下脱";
 
-        private static string NoteLeftApplyForUpDetach_NotifyInfo = "道申请上脱";
-        private static string NoteRightApplyForUpDetach_NotifyInfo = "道申请上脱";
-        private static string NoteLeftApplyForDownDetach_NotifyInfo = "道申请下脱";
-        private static string NoteRightApplyForDownDetach_NotifyInfo = "道申请下脱";
+        private static string NoteLeftApplyForUpDetach_NotifyInfo = "道西头申请上脱";
+        private static string NoteRightApplyForUpDetach_NotifyInfo = "道东头申请上脱";
+        private static string NoteLeftApplyForDownDetach_NotifyInfo = "道西头申请下脱";
+        private static string NoteRightApplyForDownDetach_NotifyInfo = "道东头申请下脱";
 
-        private static string NoteLeftCubeAddress_NotifyInfo = "脱轨器上方异常";
-        private static string NoteRightCubeAddress_NotifyInfo = "脱轨器上方异常";
+        private static string NoteLeftCubeAddress_NotifyInfo = "脱轨器西头上方异常";
+        private static string NoteRightCubeAddress_NotifyInfo = "脱轨器东头上方异常";
         private static string NoteFlagFault_NotifyInfo = "道标志故障";
         private static string NoteNotInPlace_NotifyInfo = "道脱轨器未下到位";
         private static string NoteTouch_NotifyInfo = "道乱动申请开关";
