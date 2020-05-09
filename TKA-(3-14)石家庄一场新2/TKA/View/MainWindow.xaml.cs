@@ -37,7 +37,7 @@ namespace TKA.View
             mainWindowViewModel = new MainWindowViewModel();
             this.DataContext = mainWindowViewModel;// new MainWindowViewModel();
 
-           PLCControler.Instence.InitPLC();
+           //PLCControler.Instence.InitPLC();
             access = new Access();
             //tg_canspeek.IsChecked = true;
         }

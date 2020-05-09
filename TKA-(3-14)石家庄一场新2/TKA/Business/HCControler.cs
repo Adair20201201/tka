@@ -114,10 +114,10 @@ namespace TKA
             lpPreviewInfo.lChannel = channel;//预te览的设备通道
             lpPreviewInfo.dwStreamType = 0;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
             lpPreviewInfo.dwLinkMode = 1;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
-            lpPreviewInfo.bBlocked = false; //0- 非阻塞取流，1- 阻塞取流
-            lpPreviewInfo.dwDisplayBufNum = 1; //播放库播放缓冲区最大缓冲帧数
-            lpPreviewInfo.byProtoType = 0;
-            lpPreviewInfo.byPreviewMode = 0;
+            //lpPreviewInfo.bBlocked = true; //0- 非阻塞取流，1- 阻塞取流
+            //lpPreviewInfo.dwDisplayBufNum = 1; //播放库播放缓冲区最大缓冲帧数
+            //lpPreviewInfo.byProtoType = 0;
+            //lpPreviewInfo.byPreviewMode = 0;
             //RealDataCallBack_V40
             CallBackHandle = new HCNetSDK_X64.REALDATACALLBACK(Playback);
 

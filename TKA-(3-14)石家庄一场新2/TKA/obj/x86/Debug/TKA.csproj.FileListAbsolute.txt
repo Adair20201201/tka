@@ -260,6 +260,6 @@ D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\View\LogWindow
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.g.resources
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.Properties.Resources.resources
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.GenerateResource.Cache
-D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.CoreCompileInputs.cache
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.exe
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.pdb
+D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.CoreCompileInputs.cache
