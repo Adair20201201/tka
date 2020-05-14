@@ -48,13 +48,13 @@ namespace TKA
         //private static HCNetSDK_X86.NET_DVR_DEVICEINFO lpDeviceInfo;
         public static HCNetSDK_X64.NET_DVR_DEVICEINFO_V30 lpDeviceInfo_X64;
 
-        public static IHCControl factory(int userID, int channel, System.Windows.Forms.Control control, int userDate = -1)
+        public static IHCControl factory(int userID, int channel, IntPtr wndhandle, int userDate = -1)
         {
             IHCControl ihc;
             switch (SystemHelper.GetOSBit())
             {
                 case OSBit.OS64Bit:
-                    ihc = new HC_SDK_X64(userID, channel, control, userDate);
+                    ihc = new HC_SDK_X64(userID, channel, wndhandle, userDate);
                     break;
                 //case OSBit.OS32Bit:
                 //    ihc = new HCControl_X86(userID, channel, wndhandle, userDate);
@@ -93,7 +93,6 @@ namespace TKA
         private int ClientPort = -1;
         private int RealHandle = -1;
         private IntPtr WndHandle = IntPtr.Zero;
-        private System.Windows.Forms.Control control;
         private bool IsTurnStart = false;
         public HCNetSDK_X64.REALDATACALLBACK CallBackHandle = null;
         public HCNetSDK_X64.NET_DVR_CLIENTINFO lpClientInfo;
@@ -101,19 +100,20 @@ namespace TKA
         //public HCNetSDK_X64.REALDATACALLBACK RealData = null;
         private PlayCtrl_X64.tagRECT pSrcRect;
 
-        public HC_SDK_X64(int userid, int channel, System.Windows.Forms.Control control, int userDate)
+        public HC_SDK_X64(int userid, int channel, IntPtr wndhandle, int userDate)
         {
-            HCNetSDK_X64.NET_DVR_SetShowMode((uint)HCNetSDK_X64.DISPLAY_MODE.OVERLAYMODE, 0);
+            //HCNetSDK_X64.NET_DVR_SetShowMode((uint)HCNetSDK_X64.DISPLAY_MODE.OVERLAYMODE, 0);
             lpClientInfo.lChannel = channel;
             lpClientInfo.lLinkMode = 1;
             lpClientInfo.sMultiCastIP = "";
             lpClientInfo.hPlayWnd = IntPtr.Zero;
 
-            HCNetSDK_X64.NET_DVR_PREVIEWINFO lpPreviewInfo = new HCNetSDK_X64.NET_DVR_PREVIEWINFO();
-            lpPreviewInfo.hPlayWnd = control.Handle;//预览窗口
-            lpPreviewInfo.lChannel = channel;//预te览的设备通道
-            lpPreviewInfo.dwStreamType = 0;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
-            lpPreviewInfo.dwLinkMode = 1;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
+            //HCNetSDK_X64.NET_DVR_PREVIEWINFO lpPreviewInfo = new HCNetSDK_X64.NET_DVR_PREVIEWINFO();
+            //lpPreviewInfo.hPlayWnd = wndhandle;//control.Handle;//预览窗口
+            //lpPreviewInfo.lChannel = channel;//预te览的设备通道
+            //lpPreviewInfo.dwStreamType = 0;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
+            //lpPreviewInfo.dwLinkMode = 1;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
+            
             //lpPreviewInfo.bBlocked = true; //0- 非阻塞取流，1- 阻塞取流
             //lpPreviewInfo.dwDisplayBufNum = 1; //播放库播放缓冲区最大缓冲帧数
             //lpPreviewInfo.byProtoType = 0;
@@ -123,7 +123,7 @@ namespace TKA
 
             UserID = userid;
             UserDate = userDate;
-            WndHandle = control.Handle;
+            WndHandle = wndhandle;
             pSrcRect.Init();
 
 

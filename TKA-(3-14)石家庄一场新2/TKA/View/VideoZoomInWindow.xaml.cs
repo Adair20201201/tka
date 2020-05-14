@@ -44,7 +44,7 @@ namespace TKA.View
 
             if (HCUserID != -1)
             {
-                VZWVM.ZoomInVideoControl = HC_SDKFactory.factory(HCUserID, Channle, ZoomInVideo, 0);
+                VZWVM.ZoomInVideoControl = HC_SDKFactory.factory(HCUserID, Channle, ZoomInVideo.Handle, 0);
                 VZWVM.ZoomInVideoControl.Play();
             }
         }

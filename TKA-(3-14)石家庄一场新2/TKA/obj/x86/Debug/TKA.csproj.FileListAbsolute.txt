@@ -229,7 +229,6 @@ D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\bin\Debug\Quartz.dll
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\bin\Debug\System.Windows.Interactivity.dll
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\bin\Debug\Quartz.pdb
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\bin\Debug\Quartz.xml
-D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csprojResolveAssemblyReference.cache
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\View\RotationLog.baml
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\View\FingerprintWindow.g.cs
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\View\MainWindow.g.cs
@@ -263,3 +262,4 @@ D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.Gen
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.exe
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.pdb
 D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.CoreCompileInputs.cache
+D:\git\repository\TKA-(3-14)石家庄一场新2\TKA\obj\x86\Debug\TKA.csproj.CopyComplete

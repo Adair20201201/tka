@@ -59,12 +59,12 @@ namespace TKA.View
 
             if (HCUserID != -1)
             {
-                VGVM.WestThroatVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.WestThroat.Channel + dwDCStartChannelNum, WestThroatVideo, 0);
-                VGVM.WestTrackVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].West.Channel + dwDCStartChannelNum, WestTrackVideo, 0);
-                VGVM.WestTrackZoomVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].West.Channel + dwDCStartChannelNum, WestTrackZoomVideo, 0);
-                VGVM.EastTrackZoomVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].East.Channel + dwDCStartChannelNum, EastTrackZoomVideo, 0);
-                VGVM.EastTrackVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].East.Channel + dwDCStartChannelNum, EastTrackVideo, 0);
-                VGVM.EastThroatVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.EastThroat.Channel + dwDCStartChannelNum, EastThroatVideo, 0);
+                VGVM.WestThroatVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.WestThroat.Channel + dwDCStartChannelNum, WestThroatVideo.Handle, 0);
+                VGVM.WestTrackVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].West.Channel + dwDCStartChannelNum, WestTrackVideo.Handle, 0);
+                VGVM.WestTrackZoomVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].West.Channel + dwDCStartChannelNum, WestTrackZoomVideo.Handle, 0);
+                VGVM.EastTrackZoomVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].East.Channel + dwDCStartChannelNum, EastTrackZoomVideo.Handle, 0);
+                VGVM.EastTrackVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.Track[0].East.Channel + dwDCStartChannelNum, EastTrackVideo.Handle, 0);
+                VGVM.EastThroatVideoControl = HC_SDKFactory.factory(HCUserID, VGVM.TV.EastThroat.Channel + dwDCStartChannelNum, EastThroatVideo.Handle, 0);
                 VGVM.PlayAll();
             }
         }
@@ -76,7 +76,7 @@ namespace TKA.View
             uint dwReturn = 0;
             if (!HCNetSDK_X64.NET_DVR_GetDVRConfig(HCUserID, HCNetSDK_X64.NET_DVR_GET_IPPARACFG_V40, 0, ptrIpParaCfgV40, dwSize, ref dwReturn))
             {
-                //MessageBox.Show("Net NVR Failed! Code :" + HCNetSDK_X64.NET_DVR_GetLastError());
+                MessageBox.Show("Net NVR Failed! Code :" + HCNetSDK_X64.NET_DVR_GetLastError());
             }
             else
             {
