@@ -23,10 +23,10 @@
       <West>
         <Channel>2</Channel>
         <ZoomRect>
-          <Left>175</Left>
-          <Top>140</Top>
-          <Right>350</Right>
-          <Bottom>280</Bottom>
+          <Left>960</Left>
+          <Top>540</Top>
+          <Right>1920</Right>
+          <Bottom>1080</Bottom>
         </ZoomRect>
       </West>
       <East>
